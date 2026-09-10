@@ -1,15 +1,17 @@
-# Marci Metzger homepage redesign
+# Marci Metzger Homepage
 
-A single-page real estate homepage built with **Vite, React, TypeScript, and CSS**. The original design and all 21 original images are retained.
+A responsive, single-page real estate website built with React, TypeScript, Vite, and CSS.
 
-## Run locally
+## Getting started
 
-Use Node.js 22.12 or newer.
+Requires Node.js 22.12 or newer.
 
 ```sh
 npm ci
 npm run dev
 ```
+
+## Build and checks
 
 ```sh
 npm run typecheck
@@ -18,50 +20,38 @@ npm run smoke
 npm run preview
 ```
 
-Vite creates the deployable website in `dist/`. Author the website in `src/` and keep original images in `public/assets/`; generated output and dependencies are excluded from Git.
+The production build is written to `dist/`. Upload that folder to a static web host. Edit source files in `src/`; images are stored in `public/assets/`.
 
-## Skills demonstrated
+## Project structure
 
-The implementation is aligned with the development skills listed in the supplied CV:
+- `src/App.tsx` — page layout and shared inquiry state.
+- `src/components/Sections.tsx` — homepage content sections.
+- `src/components/Header.tsx` — responsive navigation.
+- `src/components/Gallery.tsx` — photo gallery and navigation.
+- `src/components/Dialog.tsx` — reusable native modal.
+- `src/components/PropertySearch.tsx` — property preferences and price validation.
+- `src/components/Contact.tsx` — contact fields and message preparation.
+- `src/data/photos.ts` — gallery data.
+- `src/styles.css` — responsive styles.
+- `public/assets/` — website images.
+- `scripts/smoke.mjs` — rendering, link, and asset checks.
 
-| Listed skill or experience | Demonstrated here |
-| --- | --- |
-| React | Reusable page components, stateful mobile navigation, gallery, dialogs, and forms |
-| TypeScript | Strict type checking, typed component props, event handlers, refs, and photo data |
-| JavaScript | Price validation, currency formatting, keyboard navigation, clipboard integration |
-| Node.js | Vite development server, production build, and smoke checks |
-| Git/GitHub | Version-controlled source with a reproducible npm lockfile |
-| Front-end responsiveness and usability | Responsive CSS, semantic HTML, labeled fields, keyboard-accessible dialogs, reduced-motion support |
-| Smoke/build verification | TypeScript checks, production compilation, React rendering and asset smoke checks |
-| Technical documentation | Setup instructions, component structure, and integration limitations |
+## Features
 
-Vite is the requested build tool. No backend, database, or AI framework is needed for this single-page assignment. The CV itself is not included in the project or deployment.
-
-## Source structure
-
-- `src/App.tsx`: page composition and shared inquiry message state.
-- `src/components/Sections.tsx`: original homepage content as React sections.
-- `src/components/Header.tsx`: responsive navigation.
-- `src/components/Gallery.tsx`: expandable gallery and photo navigation.
-- `src/components/Dialog.tsx`: reusable accessible native modal.
-- `src/components/PropertySearch.tsx`: search preferences, validation, and inquiry handoff.
-- `src/components/Contact.tsx`: controlled contact fields and copy-to-contact workflow.
-- `src/data/photos.ts`: typed gallery data.
-- `src/styles.css`: responsive styles.
-- `public/assets/`: 21 images downloaded directly from the original website.
+- Responsive layouts and mobile navigation.
+- Seven-photo gallery with keyboard navigation.
+- Property preferences with minimum/maximum price validation.
+- Contact message preparation and clipboard support.
+- Accessible field labels, modal focus handling, and reduced-motion support.
 
 ## Content and integrations
 
-Source: https://marcimetzger.com/ (downloaded September 10, 2026).
+Content and 21 images are sourced from https://marcimetzger.com/ for this homepage redesign assignment. Sales figures are labeled with their original reporting year.
 
-The homepage retains the business content, portrait, sales highlights, services, photo gallery, affiliation logos, social profiles, phone, address, and hours. The original 2021 statistics remain dated. Duplicated responsive headings are consolidated. The original platform's analytics and reCAPTCHA notices are not applied to this site because those integrations are not installed.
+Property search summarizes preferences and links to the existing live listings. Live MLS filtering requires an authorized integration.
 
-The original MLS widget uses a domain-specific integration. Search summarizes preferences, links to Marci's live listings, and can add preferences to an inquiry. It does not return live filtered MLS results.
+The contact form prepares a message for copying into the existing secure contact form. It does not send messages directly. Direct delivery requires an authorized form endpoint.
 
-The contact component prepares and copies a message before opening the original secure contact form. It does not submit messages or claim successful delivery. A production replacement would require authorized form and MLS integrations.
+## Validation
 
-## Validation and hosting
-
-Strict TypeScript checking, Vite production build, React render smoke checks, and original-image integrity checks pass. Browser interaction and visual testing have not been performed.
-
-The project uses its existing Sites deployment. Access remains private pending explicit approval for public visibility. The `dist` folder is also compatible with static hosts.
+TypeScript checks, production compilation, React rendering, internal anchors, and asset references are covered by the commands above. Browser interaction and visual testing have not been performed.

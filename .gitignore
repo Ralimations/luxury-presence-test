@@ -2,8 +2,10 @@ reference/
 *.tar.gz
 *.tar
 .env*
-.sites-workflow-metrics.jsonl
+*.jsonl
 
 node_modules/
 dist/
 *.tsbuildinfo
+
+submission/
