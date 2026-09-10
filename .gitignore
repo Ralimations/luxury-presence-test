@@ -1,0 +1,5 @@
+reference/
+*.tar.gz
+*.tar
+.env*
+.sites-workflow-metrics.jsonl
