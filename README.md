@@ -1,29 +1,67 @@
 # Marci Metzger homepage redesign
 
-A responsive single-page real estate website built with plain HTML, CSS, and JavaScript. No installation or build step is needed. Open `dist/index.html`, or serve `dist` with any static web server.
+A single-page real estate homepage built with **Vite, React, TypeScript, and CSS**. The original design and all 21 original images are retained.
 
-## Design
+## Run locally
 
-Editorial serif typography, charcoal and gold, generous spacing, original Pahrump photography, and clear buyer/seller paths. Mobile navigation, keyboard-accessible photo dialogs, reduced-motion support, labeled forms, and a skip link are included.
+Use Node.js 22.12 or newer.
 
-## Content and images
+```sh
+npm ci
+npm run dev
+```
+
+```sh
+npm run typecheck
+npm run build
+npm run smoke
+npm run preview
+```
+
+Vite creates the deployable website in `dist/`. Author the website in `src/` and keep original images in `public/assets/`; generated output and dependencies are excluded from Git.
+
+## Skills demonstrated
+
+The implementation is aligned with the development skills listed in the supplied CV:
+
+| Listed skill or experience | Demonstrated here |
+| --- | --- |
+| React | Reusable page components, stateful mobile navigation, gallery, dialogs, and forms |
+| TypeScript | Strict type checking, typed component props, event handlers, refs, and photo data |
+| JavaScript | Price validation, currency formatting, keyboard navigation, clipboard integration |
+| Node.js | Vite development server, production build, and smoke checks |
+| Git/GitHub | Version-controlled source with a reproducible npm lockfile |
+| Front-end responsiveness and usability | Responsive CSS, semantic HTML, labeled fields, keyboard-accessible dialogs, reduced-motion support |
+| Smoke/build verification | TypeScript checks, production compilation, React rendering and asset smoke checks |
+| Technical documentation | Setup instructions, component structure, and integration limitations |
+
+Vite is the requested build tool. No backend, database, or AI framework is needed for this single-page assignment. The CV itself is not included in the project or deployment.
+
+## Source structure
+
+- `src/App.tsx`: page composition and shared inquiry message state.
+- `src/components/Sections.tsx`: original homepage content as React sections.
+- `src/components/Header.tsx`: responsive navigation.
+- `src/components/Gallery.tsx`: expandable gallery and photo navigation.
+- `src/components/Dialog.tsx`: reusable accessible native modal.
+- `src/components/PropertySearch.tsx`: search preferences, validation, and inquiry handoff.
+- `src/components/Contact.tsx`: controlled contact fields and copy-to-contact workflow.
+- `src/data/photos.ts`: typed gallery data.
+- `src/styles.css`: responsive styles.
+- `public/assets/`: 21 images downloaded directly from the original website.
+
+## Content and integrations
 
 Source: https://marcimetzger.com/ (downloaded September 10, 2026).
 
-All 21 distinct homepage images are downloaded directly from the original site's image host and stored in `dist/assets`. This includes the logo, original background and metadata photograph, portrait, three sales images, seven gallery photos, three service images, and four affiliation logos. The loading placeholder is intentionally excluded.
+The homepage retains the business content, portrait, sales highlights, services, photo gallery, affiliation logos, social profiles, phone, address, and hours. The original 2021 statistics remain dated. Duplicated responsive headings are consolidated. The original platform's analytics and reCAPTCHA notices are not applied to this site because those integrations are not installed.
 
-The redesign retains the original homepage's business information, services, sales highlights, phone, address, hours, social profiles, search fields, and gallery. Repeated headings created by the original responsive markup are consolidated. The original 2021 statistics remain dated. Original cookie and reCAPTCHA platform notices are not applied to this static site because it runs no analytics and has no reCAPTCHA integration.
+The original MLS widget uses a domain-specific integration. Search summarizes preferences, links to Marci's live listings, and can add preferences to an inquiry. It does not return live filtered MLS results.
 
-## Integrations
+The contact component prepares and copies a message before opening the original secure contact form. It does not submit messages or claim successful delivery. A production replacement would require authorized form and MLS integrations.
 
-The source website's MLS widget is tied to its domain and API key. This redesign validates the requested price range, summarizes preferences, links to the original live listings, and can add preferences to the contact message. It does not claim to return live or filtered MLS results.
+## Validation and hosting
 
-Contact details can be prepared and copied before opening the original secure contact form. The static site does not submit messages or claim successful delivery. A production replacement would require an authorized form endpoint and MLS integration.
+Strict TypeScript checking, Vite production build, React render smoke checks, and original-image integrity checks pass. Browser interaction and visual testing have not been performed.
 
-## Hosting
-
-The `dist` folder can be uploaded directly to any static web host. `.openai/hosting.json` connects this project to Sites. No secrets are included in the website.
-
-## Validation
-
-JavaScript syntax, local assets, fragment targets, document structure, and image integrity are checked before publication. Browser interaction and visual testing have not been performed.
+The project uses its existing Sites deployment. Access remains private pending explicit approval for public visibility. The `dist` folder is also compatible with static hosts.

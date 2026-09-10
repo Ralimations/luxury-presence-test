@@ -3,3 +3,7 @@ reference/
 *.tar
 .env*
 .sites-workflow-metrics.jsonl
+
+node_modules/
+dist/
+*.tsbuildinfo
